@@ -30,9 +30,11 @@
 \usepackage{tabularx,colortbl} % Advanced table configurations
 \usepackage{fontspec} % Allows font customization
 \usepackage{hyperref}
+\usepackage{pbox}
+\usepackage{ragged2e}
 
 \defaultfontfeatures{Mapping=tex-text}
-%\setmainfont{Garamond} % Main document font
+\setmainfont{EB Garamond} % Main document font
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
 
@@ -52,9 +54,8 @@
 \cofoot{
 \addfontfeature{LetterSpace=20.0}\fontsize{12.5}{17}\selectfont % Letter spacing and font size
 
-8 rue d'Artois {\large\textperiodcentered} Paris {\large\textperiodcentered} France\\ % Your mailing address
-osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
-\href{https://fr.linkedin.com/in/oscar-laurent-52878215}{LinkedIn}
+\href{https://fr.linkedin.com/in/oscar-laurent-52878215}{LinkedIn} {\large\textperiodcentered} 
+\href{https://github.com/olaure/}{GitHub}
 }
 
 %----------------------------------------------------------------------------------------
@@ -67,12 +68,26 @@ osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
 % HEADER SECTION
 %----------------------------------------------------------------------------------------
 
-{ % Your name at the top
-    \addfontfeature{LetterSpace=20.0}
-    \fontsize{36}{36}
-    \selectfont
-    \scshape Oscar Laurent
+\begin{tabularx}{\textwidth}{
+	@{} >{\addfontfeature{LetterSpace=20.0}\fontsize{26}{26}\selectfont \scshape}l
+	@{\hspace{3.7cm}} r 
+	@{\hspace{0.5cm}} r
 }
+ \pbox{4cm}
+ {
+	 \href{https://fr.linkedin.com/in/oscar-laurent-52878215}{Oscar  
+	 Laurent}\\
+	 {\addfontfeature{LetterSpace=10.0}\fontsize{10}{10}\selectfont
+	 D\'eveloppeur \  junior
+	 }
+  } &
+ \pbox{5cm}{\RaggedLeft%\raggedright
+  \href{http://www.openstreetmap.org/\#map=19/48.87250/2.30862}{8 rue d'Artois, Paris} \\ % Your mailing address
+  osc.laurent@gmail.com \\
+  \href{tel:0607109236}{06 07 10 92 36} % Your email address and phone number
+ } &
+ \raisebox{-.55\height}{\includegraphics[width=3cm]{me.png}} % image baseline is at its bottom
+\end{tabularx}
 
 \vspace{1.5cm} % Extra whitespace after the large name at the top
 
@@ -80,11 +95,12 @@ osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
 %	OBJECTIVE
 %----------------------------------------------------------------------------------------
 
-\section{Motivation}
+\section{Motivations}
 
- Je cherche un stage motivant, me permettant d'approfondir mes connaissances en s\'ecurit\'e 
- tout en d\'eveloppant des algorithmes innovants. \\
+ Je cherche un stage me permettant d'appliquer \`a une fin industrielle mes connaissances en acquisition et traitement de l'information.
+ J'aimerais y \^etre au contact de professionnels de la s\'ecurit\'e afin d'approfondir mes connaissances dans ce domaine.
 
+\vspace{10pt}
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
@@ -92,9 +108,9 @@ osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
 \section{Comp\'etences}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
- Langages & C, bash, python 2.7, awk, fortran, ruby \\
+ Langages & C, bash, python 2.7, PHP, awk, fortran, JS, ruby \\
  Outils & vim, git, nmap \\
- Compétences & débug (gdb, lldb), optimisation, statistiques \\ 
+ Compétences & débug (gdb, lldb), optimisation, analyses statistiques \\ 
  Environnements & Windows, UNIX
 \end{tabular}
 
@@ -107,9 +123,9 @@ osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
 \gray Période & \textbf{Novembre 2015 --- Aujourd'hui}\\
 \gray Titre & \textbf{Architecte en technologie numérique}\\
-\gray Université & \textbf{\'{E}cole 42} \hfill Paris, France\\
-& Apprentissage d'algorithmes avançés (A*, pathfinding) \\
-& Partenariat avec l'Institut Français de la Mode (scraping, ruby)
+\gray Université & \textbf{\href{http://www.42.fr}{\'{E}cole 42}} \hfill Paris, France\\
+& Apprentissage d'algorithmes d'optimisation (A*, pathfinding) \\
+& Gestion de projet interdisciplinaire en partenariat avec l'\href{http://www.ifm-paris.com/}{IFM} (scraping, ruby)
 % 
 \end{tabularx}
 
@@ -117,10 +133,10 @@ osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
 
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
 \gray Période & \textbf{Septembre 2012 --- Juillet 2016}\\
-\gray Titre & \textbf{Thèse de Science en Physico-chimie des matériaux}\\
-\gray Université & \textbf{Université Paris 6} \hfill Paris, France\\
-& Analyses statistiques de modélisations moléculaires \\
-& (structures locales et à moyenne portée) de syst\`emes vitreux
+\gray Titre & \textbf{Thèse de Science en physico-chimie des matériaux}\\
+\gray Université & \textbf{\href{http://www.upmc.fr/}{Université Paris 6}} \hfill Paris, France\\
+& Analyses statistiques (C et fortran) de modélisations moléculaires \\
+& (structures \`a courte et et moyenne portées) de syst\`emes vitreux
 \end{tabularx}
 
 \vspace{12pt}
@@ -128,8 +144,8 @@ osc.laurent@gmail.com \  06 07 10 92 36\\ % Your email address and phone number
 \begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{2cm}X}
 \gray Période & \textbf{Septembre 2011 --- Juillet 2012}\\
 \gray Titre & \textbf{Master de Science en Physique}\\
-\gray Université & \textbf{Université Paris 7} \hfill Paris, France\\
-& Apprentissage du python pour faire du tracking de points sur videos
+\gray Université & \textbf{\href{http://www.univ-paris-diderot.fr/}{Université Paris 7}} \hfill Paris, France\\
+& Utilisation de python pour faire du tracking de points sur videos
 \end{tabularx}
 
 \vspace{12pt}
